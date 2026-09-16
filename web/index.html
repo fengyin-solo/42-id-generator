@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分布式 ID 生成器</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>分布式 ID 生成器</h1>
+      <p>Distributed ID Generator Dashboard</p>
+    </header>
+
+    <section class="dashboard">
+      <h2>统计看板</h2>
+      <div class="stats-grid" id="stats">
+        <div class="stat-card">
+          <div class="stat-label">业务类型数</div>
+          <div class="stat-value" id="biz-count">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">活跃节点数</div>
+          <div class="stat-value" id="active-nodes">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">今日分配量</div>
+          <div class="stat-value" id="today-allocated">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">峰值 QPS</div>
+          <div class="stat-value" id="peak-qps">-</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <h2>ID 生成</h2>
+      <div class="action-bar">
+        <select id="biz-select">
+          <option value="">选择业务类型</option>
+        </select>
+        <button id="btn-generate">生成一个 ID</button>
+        <button id="btn-batch">批量生成 10 个</button>
+      </div>
+      <div id="generate-result" class="result-box"></div>
+    </section>
+
+    <section class="list-section">
+      <h2>业务类型列表</h2>
+      <table id="biz-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>编码</th>
+            <th>模式</th>
+            <th>状态</th>
+            <th>创建时间</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
